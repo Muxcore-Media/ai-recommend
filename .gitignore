@@ -1,0 +1,4 @@
+/ai-recommend
+*.exe
+*.test
+dist/

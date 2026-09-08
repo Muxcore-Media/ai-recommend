@@ -1,0 +1,10 @@
+{
+  "name": "AI Recommend",
+  "description": "AI library-based suggestions of media to add",
+  "version": "0.1.0",
+  "author": "Muxcore-Media",
+  "roles": ["ai"],
+  "capabilities": ["ai.recommend", "settings"],
+  "contracts": ["contracts-ai"],
+  "minCoreVersion": "0.5.8"
+}
