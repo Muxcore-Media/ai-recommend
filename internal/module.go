@@ -12,13 +12,12 @@ import (
 	"sync"
 	"time"
 
+	manifest "github.com/Muxcore-Media/ai-recommend"
 	"github.com/Muxcore-Media/core/pkg/contracts"
 	meshv1 "github.com/Muxcore-Media/core/proto/gen/muxcore/mesh/v1"
 	modulesdk "github.com/Muxcore-Media/core/sdk/go/module"
 	"google.golang.org/grpc"
 )
-
-const moduleVersion = "0.1.0"
 
 type Module struct {
 	id, grpcAddr, httpAddr string
@@ -54,7 +53,7 @@ func New(cfg Config) *Module {
 
 func (m *Module) Info() contracts.ModuleInfo {
 	return contracts.ModuleInfo{
-		ID: m.id, Name: "AI Recommend", Version: moduleVersion,
+		ID: m.id, Name: "AI Recommend", Version: modulesdk.ManifestVersion(manifest.ManifestJSON),
 		Roles: []string{"ai"}, Description: "AI library-based suggestions of media to add",
 		Author: "Muxcore-Media", Capabilities: []string{"ai.recommend", "settings"},
 		MinCoreVersion: MinCoreVersion, HTTPAddr: m.grpcAddr,
